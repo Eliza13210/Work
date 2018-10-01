@@ -6,9 +6,6 @@ public class Person {
     private  String attackSpecial;
 
 
-    public Person(String attackBasic, String attackSpecial) {
-        this.attackBasic = attackBasic;
-        this.attackSpecial = attackSpecial;
-    }
+
 
 }
