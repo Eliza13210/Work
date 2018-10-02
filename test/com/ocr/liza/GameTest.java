@@ -23,7 +23,7 @@ class GameTest {
     @Test
     public void Given_PlayerOne_When_AddingCorrectChoices_Then_PlayerSummeryOk() {
         Game game= new Game();
-        game.createPlayer(1);
+
         person="guerrier";
         niveau=50;
         force=10;

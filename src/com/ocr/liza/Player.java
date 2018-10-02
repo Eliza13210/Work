@@ -2,23 +2,29 @@ package com.ocr.liza;
 
 public class Player {
 
+
     protected String person;
     protected int niveau;
     protected int force;
     protected int intelligence;
     protected int agility;
     protected int vitality;
+    protected String joueur;
 
+public Player(String joueur, String person, int niveau, int force, int intelligence, int agility, int vitality){
+    this.joueur=joueur;
+    this.person=person;
+    this.niveau=niveau;
+    this.force=force;
+    this.intelligence=intelligence;
+    this.agility=agility;
+    this.vitality=vitality;
+}
 
-    public Player(String person, int niveau,int force, int intelligence, int agility, int vitality) {
-        this.person = person;
-        this.agility = agility;
-        this.force =force;
-        this.intelligence = intelligence;
-        this.niveau =niveau;
-        this.vitality=vitality;
-
+    public String getJoueur() {
+        return joueur;
     }
+
     public int getVitality() {
         return vitality;
     }
@@ -70,7 +76,7 @@ public class Player {
     public void printPlayer(){
 
             //print out the choices made
-           String playerSummary = "Woarg je suis un " + person + " " + "joueur1"
+           String playerSummary = "Woarg je suis un " + person + " " + joueur
                     + " niveau " + niveau
                     + " je possède " + force + " de force, "
                     + agility + " d'agilité et "
@@ -78,6 +84,12 @@ public class Player {
 
             System.out.println(playerSummary);
 
+
+    }
+    public void basicAttack(Player playerOne, Player playerTwo){
+
+    }
+    public void specialAttack(Player playerOne, Player playerTwo){
 
     }
 
