@@ -23,7 +23,7 @@ public class Main {
         }
         playerOne.printPlayer();
 
-        //create the second player
+        //create the player two
         Game player2 = new Game();
         player2.choosePlayer(2);
 

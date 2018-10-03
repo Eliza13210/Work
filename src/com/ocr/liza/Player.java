@@ -3,14 +3,14 @@ package com.ocr.liza;
 public class Player {
 
     protected String person;
-    protected int niveau;
+    protected double niveau;
     protected double force;
     protected int intelligence;
     protected double agility;
     protected double vitality;
     protected String joueur;
 
-public Player(String joueur, String person, int niveau, double force, int intelligence, double agility, double vitality){
+public Player(String joueur, String person, double niveau, double force, int intelligence, double agility, double vitality){
     this.joueur=joueur;
     this.person=person;
     this.niveau=niveau;
@@ -36,7 +36,7 @@ public Player(String joueur, String person, int niveau, double force, int intell
         return person;
     }
 
-    public int getNiveau() {
+    public double getNiveau() {
         return niveau;
     }
 

@@ -22,7 +22,7 @@ public class Game {
 
         //let the player choose character and check if choice is in the range
         CheckIfInputIsValidNumber chooseCharacter=new CheckIfInputIsValidNumber();
-        int choice= chooseCharacter.checkInput(1,3);
+        int choice=chooseCharacter.checkInput(1,3);
         chooseCharacter(choice);
         chooseNiveauAgilityForceIntelligence();
     }
@@ -47,18 +47,21 @@ public class Game {
     private void chooseNiveauAgilityForceIntelligence() {
 
         do {
-            CheckIfInputIsValidNumber chooseNumber=new CheckIfInputIsValidNumber();
+            CheckIfInputIsValidNumber chooseNiveau=new CheckIfInputIsValidNumber();
             System.out.println("Niveau du personnage? Choisi un chiffre entre 1 et 100");
-             niveau = chooseNumber.checkInput(1,100);
+            niveau = chooseNiveau.checkInput(1,100);
 
+            CheckIfInputIsValidNumber chooseForce=new CheckIfInputIsValidNumber();
             System.out.println("Force du personnage? Choisi un chiffre entre 0 et 100");
-            force = chooseNumber.checkInput(0,100);
+            force = chooseForce.checkInput(0,100);
 
+            CheckIfInputIsValidNumber chooseAgility=new CheckIfInputIsValidNumber();
             System.out.println("Agilité du personnage? Choisi un chiffre entre 0 et 100");
-            agility = chooseNumber.checkInput(0,100);
+            agility = chooseAgility.checkInput(0,100);
 
+            CheckIfInputIsValidNumber chooseIntelligence=new CheckIfInputIsValidNumber();
             System.out.println("Intelligence du personnage? Choisi un chiffre entre 0 et 100");
-            intelligence = chooseNumber.checkInput(0,100);
+            intelligence = chooseIntelligence.checkInput(0,100);
 
             if (force + agility + intelligence != niveau)
                 System.out.println("Attention le total force + agilité + intelligence doit être égal au niveau du joueur.");
