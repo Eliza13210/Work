@@ -1,16 +1,9 @@
 package com.ocr.liza;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Game {
 
-    Scanner sc = new Scanner(System.in);
     String person;
-    String[] responses = {"guerrier", "rodeur", "mage"};
-    public int choosePlayer;
     String player;
-    int nbResponse;
     int choice;
     int niveau;
     int force;
@@ -27,13 +20,16 @@ public class Game {
         }
         System.out.println(player + " : Veuillez choisir la classe de votre personnage: 1: Guerrier 2: Rodeur 3: Mage");
 
+        //let the player choose character and check if choice is in the range
         CheckIfInputIsValidNumber chooseCharacter=new CheckIfInputIsValidNumber();
         int choice= chooseCharacter.checkInput(1,3);
+        chooseCharacter(choice);
+        chooseNiveauAgilityForceIntelligence();
     }
 
         //set players character
-        public String chooseCharacter(int nbResponse){
-        switch (nbResponse) {
+        public void chooseCharacter(int choice){
+        switch (choice) {
             case 1:
                 person = "Guerrier";
                 break;
@@ -44,40 +40,31 @@ public class Game {
                 person = "Mage";
                 break;
         }
-        return person;
     }
 
     //register niveau, force, agility, intelligence and vitality
 
-    public void chooseNiveauAgilityForceIntelligence() {
+    private void chooseNiveauAgilityForceIntelligence() {
 
         do {
-            System.out.println("Niveau du personnage?");
-            niveau = sc.nextInt();
-            if (niveau < 1 || niveau > 100)
-                throw new IllegalArgumentException("Choisi un chiffre entre 1 et 100");
+            CheckIfInputIsValidNumber chooseNumber=new CheckIfInputIsValidNumber();
+            System.out.println("Niveau du personnage? Choisi un chiffre entre 1 et 100");
+             niveau = chooseNumber.checkInput(1,100);
 
-            System.out.println("Force du personnage?");
-            force = sc.nextInt();
-            if (niveau < 0 || niveau > 100)
-                throw new IllegalArgumentException("Choisi un chiffre entre 1 et 100");
+            System.out.println("Force du personnage? Choisi un chiffre entre 0 et 100");
+            force = chooseNumber.checkInput(0,100);
 
-            System.out.println("Agilité du personnage?");
-            agility = sc.nextInt();
-            if (niveau < 0 || niveau > 100)
-                throw new IllegalArgumentException("Choisi un chiffre entre 1 et 100");
+            System.out.println("Agilité du personnage? Choisi un chiffre entre 0 et 100");
+            agility = chooseNumber.checkInput(0,100);
 
-            System.out.println("Intelligence du personnage?");
-            intelligence = sc.nextInt();
-            if (niveau < 0 || niveau > 100)
-                throw new IllegalArgumentException("Choisi un chiffre entre 1 et 100");
+            System.out.println("Intelligence du personnage? Choisi un chiffre entre 0 et 100");
+            intelligence = chooseNumber.checkInput(0,100);
 
             if (force + agility + intelligence != niveau)
                 System.out.println("Attention le total force + agilité + intelligence doit être égal au niveau du joueur.");
 
         } while (force + agility + intelligence != niveau);
         vitality = niveau * 5;
-
     }
 
 }

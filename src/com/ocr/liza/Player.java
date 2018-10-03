@@ -2,16 +2,15 @@ package com.ocr.liza;
 
 public class Player {
 
-
     protected String person;
     protected int niveau;
-    protected int force;
+    protected double force;
     protected int intelligence;
-    protected int agility;
-    protected int vitality;
+    protected double agility;
+    protected double vitality;
     protected String joueur;
 
-public Player(String joueur, String person, int niveau, int force, int intelligence, int agility, int vitality){
+public Player(String joueur, String person, int niveau, double force, int intelligence, double agility, double vitality){
     this.joueur=joueur;
     this.person=person;
     this.niveau=niveau;
@@ -25,11 +24,11 @@ public Player(String joueur, String person, int niveau, int force, int intellige
         return joueur;
     }
 
-    public int getVitality() {
+    public double getVitality() {
         return vitality;
     }
 
-    public void setVitality(int vitality) {
+    public void setVitality(double vitality) {
         this.vitality = vitality;
     }
 
@@ -41,7 +40,7 @@ public Player(String joueur, String person, int niveau, int force, int intellige
         return niveau;
     }
 
-    public int getForce() {
+    public double getForce() {
         return force;
     }
 
@@ -49,42 +48,17 @@ public Player(String joueur, String person, int niveau, int force, int intellige
         return intelligence;
     }
 
-    public int getAgility() {
+    public double getAgility() {
         return agility;
     }
 
-    public void setPerson(String person) {
-        this.person = person;
-    }
 
-    public void setNiveau(int niveau) {
-        this.niveau = niveau;
-    }
-
-    public void setForce(int force) {
-        this.force = force;
-    }
-
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public void setAgility(int agility) {
+    public void setAgility(double agility) {
         this.agility = agility;
     }
-
     public void printPlayer(){
 
-            //print out the choices made
-           String playerSummary = "Woarg je suis un " + person + " " + joueur
-                    + " niveau " + niveau
-                    + " je possède " + force + " de force, "
-                    + agility + " d'agilité et "
-                    + intelligence + " d'intelligence!";
-
-            System.out.println(playerSummary);
-
-
+        //print out the choices made
     }
     public void basicAttack(Player playerOne, Player playerTwo){
 
